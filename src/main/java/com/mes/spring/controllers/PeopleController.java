@@ -2,12 +2,13 @@ package com.mes.spring.controllers;
 
 import com.mes.spring.dao.PersonDAO;
 import com.mes.spring.models.Person;
-import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
+
+import javax.validation.Valid;
 
 @Controller
 @RequestMapping("/people")
@@ -39,7 +40,7 @@ public class PeopleController {
 
     //add people to database
     @PostMapping()
-    public String create(@ModelAttribute("person")  @Valid  Person person, BindingResult bindingResult) {
+    public String create(@ModelAttribute("person")  @Valid Person person, BindingResult bindingResult) {
         if(bindingResult.hasErrors()){
             return "people/new";
         }
