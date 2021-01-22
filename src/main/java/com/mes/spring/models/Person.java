@@ -15,8 +15,8 @@ public class Person {
     @Min(value = 0, message = "Age should be greater than 0")
     private int age;
 
-    @NotEmpty(message = "Email should not be empty")
-    @Email(message = "Email should be valid")
+//    @NotEmpty(message = "Email should not be empty")
+      @Email(message = "Email should be valid")
     private String email;
 
     public int getAge() {
